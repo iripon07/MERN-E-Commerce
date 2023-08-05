@@ -146,8 +146,8 @@ exports.updatePassword = catchAsyncErrors(async(req, res, next) => {
     sendToken(user, 200, res);
 });
 
-//Update User Profile
 
+//Update User Profile
 exports.updateProfile = catchAsyncErrors( async (req, res, next) => {
     const newUserData = {
         name: req.body.name,
@@ -161,8 +161,8 @@ exports.updateProfile = catchAsyncErrors( async (req, res, next) => {
         runValidators: true,
         useFindAndModify: false,
     });
-    res.status(200).res({
-        success: true
+    res.status(200).json({
+        success: true,
     })
 })
 
