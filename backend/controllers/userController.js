@@ -120,7 +120,6 @@ exports.resetPassword = catchAsyncErrors( async(req, res, next) => {
 })
 
 //Get user details
-
 exports.getUserDetails = catchAsyncErrors( async (req, res, next) => {
     const user = await User.findById(req.user.id);
     res.status(200).json({
@@ -129,8 +128,8 @@ exports.getUserDetails = catchAsyncErrors( async (req, res, next) => {
     });
 });
 
-//Update User Password
 
+//Update User Password
 exports.updatePassword = catchAsyncErrors(async(req, res, next) => {
     const user = await User.findById(req.user.id).select("+password");
     const isPasswordMatched = await user.comparePassword(req.body.oldPassword);
