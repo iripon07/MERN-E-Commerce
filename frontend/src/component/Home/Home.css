@@ -1,0 +1,7 @@
+.banner{
+    background-image: linear-gradient(to right, #635dc0, #3027ae);
+    height: 100vmin;
+    text-align: center;
+    color: white;
+    display: flex;
+}

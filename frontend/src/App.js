@@ -1,12 +1,13 @@
 import React from 'react';
-import './App.css';
-import Header from "./component/layout/Header/Header.js"
-import { BrowserRouter as Router } from "react-router-dom";
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import WebFont from "webfontloader";
+import './App.css';
+import Home from './component/Home/Home';
 import Footer from './component/layout/Footer/Footer';
+import Header from './component/layout/Header/Header';
+
 
 function App() {
-
   React.useEffect(() => {
     WebFont.load({
       google: {
@@ -17,8 +18,11 @@ function App() {
 
   return (
     <Router>
-      <Header/>
-      <Footer/>
+      <Header />
+      <Routes>
+        <Route exact path="/" component={Home}/>
+      </Routes>
+      <Footer />
     </Router>
   );
 }
