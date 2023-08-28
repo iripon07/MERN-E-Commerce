@@ -22,7 +22,7 @@ const Products = () => {
                 loading
                     ?
                     <Loader /> : <Fragment>
-                        <h2 className='productsHeading'>Products</h2>
+                        <h2 className='productsHeading'>Productsddddd</h2>
                         <div className='products'>
                             {
                                 products && products.map(product => (
