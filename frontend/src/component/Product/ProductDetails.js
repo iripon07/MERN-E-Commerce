@@ -9,6 +9,8 @@ import MetaData from '../layout/MetaData.js';
 import "./ProductDetails.css";
 import ReviewCard from './ReviewCard.js';
 import { useAlert } from 'react-alert'
+
+
 const ProductDetails = () => {
     const { id } = useParams();
     const dispatch = useDispatch();
