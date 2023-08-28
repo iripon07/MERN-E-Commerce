@@ -16,7 +16,7 @@ const ProductDetails = () => {
     const { product, loading, error } = useSelector((state) => state.productDetails);
 
     useEffect(() => {
-        if(error){
+        if (error) {
             alert.error(error);
             dispatch(clearErrors());
         }
