@@ -29,7 +29,10 @@ class apiFeatures {
         let queryStr = JSON.stringify(queryCopy);
         queryStr = queryStr.replace(/\b(gt|gte|lt|lte)\b/g, (key) => `$${key}`);
 <<<<<<< HEAD
+<<<<<<< HEAD
         
+=======
+>>>>>>> 19ab5c5e7635e56816be3a31c37500aa7170adb2
 =======
 >>>>>>> 19ab5c5e7635e56816be3a31c37500aa7170adb2
         this.query = this.query.find(JSON.parse(queryStr));

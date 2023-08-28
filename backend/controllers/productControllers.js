@@ -15,9 +15,15 @@ exports.createProduct = catchAsyncErrors(async (req, res, next) => {
 
 //Get All Products
 <<<<<<< HEAD
+<<<<<<< HEAD
 exports.getAllProducts = catchAsyncErrors(async (req, res, next) => {
     const resultPerPage = 8;
     const productsCount = await Product.countDocuments();
+=======
+exports.getAllProducts = catchAsyncErrors(async (req, res) => {
+    const resultPerPage = 5;
+    const productCount = await Product.countDocuments();
+>>>>>>> 19ab5c5e7635e56816be3a31c37500aa7170adb2
 =======
 exports.getAllProducts = catchAsyncErrors(async (req, res) => {
     const resultPerPage = 5;
@@ -32,7 +38,11 @@ exports.getAllProducts = catchAsyncErrors(async (req, res) => {
         success: true,
         products,
 <<<<<<< HEAD
+<<<<<<< HEAD
         productsCount,
+=======
+        productCount
+>>>>>>> 19ab5c5e7635e56816be3a31c37500aa7170adb2
 =======
         productCount
 >>>>>>> 19ab5c5e7635e56816be3a31c37500aa7170adb2
@@ -48,7 +58,11 @@ exports.getProductDetails = catchAsyncErrors(async (req, res, next) => {
     res.status(200).json({
         success: true,
 <<<<<<< HEAD
+<<<<<<< HEAD
         product,
+=======
+        product
+>>>>>>> 19ab5c5e7635e56816be3a31c37500aa7170adb2
 =======
         product
 >>>>>>> 19ab5c5e7635e56816be3a31c37500aa7170adb2

@@ -42,8 +42,11 @@ const userSchema = new mongoose.Schema({
 });
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 19ab5c5e7635e56816be3a31c37500aa7170adb2
 =======
 >>>>>>> 19ab5c5e7635e56816be3a31c37500aa7170adb2
 userSchema.pre("save", async function(next){

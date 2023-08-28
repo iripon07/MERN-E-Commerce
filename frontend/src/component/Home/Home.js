@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import React, { Fragment, useEffect } from 'react';
 import { useAlert } from 'react-alert';
 import { CgMouse } from "react-icons/cg";
@@ -55,6 +56,8 @@ const Home = () => {
       }
 
 =======
+=======
+>>>>>>> 19ab5c5e7635e56816be3a31c37500aa7170adb2
 import React, { Fragment } from 'react';
 import { CgMouse } from "react-icons/cg";
 import "./Home.css";
@@ -94,6 +97,9 @@ const Home = () => {
           <Product product={product}/>
           <Product product={product}/>
         </div>
+<<<<<<< HEAD
+>>>>>>> 19ab5c5e7635e56816be3a31c37500aa7170adb2
+=======
 >>>>>>> 19ab5c5e7635e56816be3a31c37500aa7170adb2
     </Fragment>
   )

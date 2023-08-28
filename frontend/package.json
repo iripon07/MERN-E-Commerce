@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
 <<<<<<< HEAD
+<<<<<<< HEAD
     "@material-ui/core": "^4.12.4",
     "@material-ui/lab": "^4.0.0-alpha.61",
     "@mui/icons-material": "^5.14.3",
@@ -11,13 +12,18 @@
     "@mui/styles": "^5.14.5",
 =======
 >>>>>>> 19ab5c5e7635e56816be3a31c37500aa7170adb2
+=======
+>>>>>>> 19ab5c5e7635e56816be3a31c37500aa7170adb2
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.4.0",
 <<<<<<< HEAD
+<<<<<<< HEAD
     "bootstrap": "^5.3.1",
     "framer-motion": "^10.16.1",
+=======
+>>>>>>> 19ab5c5e7635e56816be3a31c37500aa7170adb2
 =======
 >>>>>>> 19ab5c5e7635e56816be3a31c37500aa7170adb2
     "overlay-navbar": "^1.2.3",
@@ -25,12 +31,18 @@
     "react-alert": "^7.0.3",
     "react-alert-template-basic": "^1.0.2",
 <<<<<<< HEAD
+<<<<<<< HEAD
     "react-bootstrap": "^2.8.0",
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
     "react-icons": "^3.11.0",
     "react-js-pagination": "^3.0.3",
     "react-material-ui-carousel": "^2.3.10",
+=======
+    "react-dom": "^18.2.0",
+    "react-helmet": "^6.1.0",
+    "react-icons": "^4.10.1",
+>>>>>>> 19ab5c5e7635e56816be3a31c37500aa7170adb2
 =======
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
@@ -44,7 +56,10 @@
     "redux-devtools-extension": "^2.13.9",
     "redux-thunk": "^2.4.2",
 <<<<<<< HEAD
+<<<<<<< HEAD
     "swiper": "^10.2.0",
+=======
+>>>>>>> 19ab5c5e7635e56816be3a31c37500aa7170adb2
 =======
 >>>>>>> 19ab5c5e7635e56816be3a31c37500aa7170adb2
     "web-vitals": "^2.1.4",
@@ -74,8 +89,12 @@
       "last 1 safari version"
     ]
 <<<<<<< HEAD
+<<<<<<< HEAD
   },
   "proxy": "http://192.168.150.1:4000"
+=======
+  }
+>>>>>>> 19ab5c5e7635e56816be3a31c37500aa7170adb2
 =======
   }
 >>>>>>> 19ab5c5e7635e56816be3a31c37500aa7170adb2

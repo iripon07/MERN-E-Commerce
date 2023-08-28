@@ -4,9 +4,12 @@ import WebFont from "webfontloader";
 import './App.css';
 import Home from './component/Home/Home';
 <<<<<<< HEAD
+<<<<<<< HEAD
 import ProductDetails from "./component/Product/ProductDetails.js";
 import Products from './component/Product/Products';
 import Search from './component/Product/Search';
+=======
+>>>>>>> 19ab5c5e7635e56816be3a31c37500aa7170adb2
 =======
 >>>>>>> 19ab5c5e7635e56816be3a31c37500aa7170adb2
 import Footer from './component/layout/Footer/Footer';
@@ -27,6 +30,7 @@ function App() {
       <Header />
       <Routes>
 <<<<<<< HEAD
+<<<<<<< HEAD
         <Route path="/" element={<Home />} />
         <Route path="/product/:id" element={<ProductDetails />} />
         <Route path='/products' element={<Products />} />
@@ -34,6 +38,9 @@ function App() {
         <Route path='/search' element={<Search />} />
 
 
+=======
+        <Route path="/" element={<Home />} exact />
+>>>>>>> 19ab5c5e7635e56816be3a31c37500aa7170adb2
 =======
         <Route path="/" element={<Home />} exact />
 >>>>>>> 19ab5c5e7635e56816be3a31c37500aa7170adb2

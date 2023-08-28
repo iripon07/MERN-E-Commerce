@@ -1,5 +1,9 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 const ErrorHandler = require("../utils/errorHandler");
+=======
+const ErrorHandler = require("../utils/errorHandler"); 
+>>>>>>> 19ab5c5e7635e56816be3a31c37500aa7170adb2
 =======
 const ErrorHandler = require("../utils/errorHandler"); 
 >>>>>>> 19ab5c5e7635e56816be3a31c37500aa7170adb2
@@ -10,6 +14,7 @@ module.exports = (err, req, res, next) => {
     err.message = err.message || "Internal Server Error";
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     // Wrong Mongodb Id error
     if (err.name === "CastError") {
         const message = `Resource not found. Invalid: ${err.path}`;
@@ -19,6 +24,8 @@ module.exports = (err, req, res, next) => {
     //Mongoose Duplicate Key Error
     if (err.code === 11000) {
 =======
+=======
+>>>>>>> 19ab5c5e7635e56816be3a31c37500aa7170adb2
     //Wrong Mongodb Id Error
     if(err.name === "CastError"){
         const message = `Resource not found. Invalid: ${err.path}`;
@@ -26,6 +33,9 @@ module.exports = (err, req, res, next) => {
     }
     //Mongoose Duplicate Key Error
     if(err.code === 11000){
+<<<<<<< HEAD
+>>>>>>> 19ab5c5e7635e56816be3a31c37500aa7170adb2
+=======
 >>>>>>> 19ab5c5e7635e56816be3a31c37500aa7170adb2
         const message = `Duplicate ${Object.keys(err.keyValue)} Enter`
         err = new ErrorHandler(message, 400);

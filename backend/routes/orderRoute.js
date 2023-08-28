@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 <<<<<<< HEAD
+<<<<<<< HEAD
 const {
 
     isAuthenticatedUser,
@@ -16,6 +17,8 @@ const {
     updateOrder,
     deleteOrder
 =======
+=======
+>>>>>>> 19ab5c5e7635e56816be3a31c37500aa7170adb2
 const { 
 
     isAuthenticatedUser, 
@@ -30,6 +33,9 @@ const {
     etAllOrders, 
     updateOrder, 
     deleteOrder 
+<<<<<<< HEAD
+>>>>>>> 19ab5c5e7635e56816be3a31c37500aa7170adb2
+=======
 >>>>>>> 19ab5c5e7635e56816be3a31c37500aa7170adb2
 
 } = require('../controllers/orderController');
@@ -44,8 +50,13 @@ router.route("/admin/orders").get(isAuthenticatedUser, authorizedRoles("admin"),
 
 router.route("/admin/order/:id")
 <<<<<<< HEAD
+<<<<<<< HEAD
     .put(isAuthenticatedUser, authorizedRoles("admin"), updateOrder)
     .delete(isAuthenticatedUser, authorizedRoles("admin"), deleteOrder);
+=======
+.put(isAuthenticatedUser, authorizedRoles("admin"), updateOrder)
+.delete(isAuthenticatedUser, authorizedRoles("admin"), deleteOrder);
+>>>>>>> 19ab5c5e7635e56816be3a31c37500aa7170adb2
 =======
 .put(isAuthenticatedUser, authorizedRoles("admin"), updateOrder)
 .delete(isAuthenticatedUser, authorizedRoles("admin"), deleteOrder);
