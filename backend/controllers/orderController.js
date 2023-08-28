@@ -1,17 +1,10 @@
-const Order = require("../Models/orderModel");
-const Product = require("../Models/productsModel");
-const ErrorHandler = require("../utils/errorHandler");
-const catchAsyncErrors = require("../middleware/catchAsyncError");
+const Order = require("../models/orderModel");
+const Product = require("../models/productModel");
+const ErrorHander = require("../utils/errorhander");
+const catchAsyncErrors = require("../middleware/catchAsyncErrors");
 
-<<<<<<< HEAD
-<<<<<<< HEAD
+// Create new Order
 exports.newOrder = catchAsyncErrors(async (req, res, next) => {
-=======
-exports.newOrder = catchAsyncErrors( async( req, res, next) => {
->>>>>>> 19ab5c5e7635e56816be3a31c37500aa7170adb2
-=======
-exports.newOrder = catchAsyncErrors( async( req, res, next) => {
->>>>>>> 19ab5c5e7635e56816be3a31c37500aa7170adb2
     const {
         shippingInfo,
         orderItems,
@@ -19,9 +12,7 @@ exports.newOrder = catchAsyncErrors( async( req, res, next) => {
         itemsPrice,
         taxPrice,
         shippingPrice,
-        totalPrice
-<<<<<<< HEAD
-<<<<<<< HEAD
+        totalPrice,
     } = req.body;
 
     const order = await Order.create({
@@ -38,106 +29,47 @@ exports.newOrder = catchAsyncErrors( async( req, res, next) => {
 
     res.status(201).json({
         success: true,
-        order
+        order,
     });
 });
 
-//Get Single Order 
+// get Single Order
 exports.getSingleOrder = catchAsyncErrors(async (req, res, next) => {
-=======
-=======
->>>>>>> 19ab5c5e7635e56816be3a31c37500aa7170adb2
-     } = req.body;
-
-     const order = await Order.create({
-         shippingInfo,
-         orderItems,
-         paymentInfo,
-         itemsPrice,
-         taxPrice,
-         shippingPrice,
-         totalPrice,
-         paidAt: Date.now(),
-         user: req.user._id,
-     });
-
-     res.status(201).json({
-        success: true,
-        order
-     });
-});
-
-//Get Single Order 
-exports.getSingleOrder = catchAsyncErrors( async( req, res, next) => {
-<<<<<<< HEAD
->>>>>>> 19ab5c5e7635e56816be3a31c37500aa7170adb2
-=======
->>>>>>> 19ab5c5e7635e56816be3a31c37500aa7170adb2
     const order = await Order.findById(req.params.id).populate(
         "user",
         "name email"
     );
-<<<<<<< HEAD
-<<<<<<< HEAD
+
     if (!order) {
-        return next(new ErrorHandler("Order not found with this Id", 404));
-=======
-    if(!order){
-        return next( new ErrorHandler("Order not found with this Id", 404));
->>>>>>> 19ab5c5e7635e56816be3a31c37500aa7170adb2
-=======
-    if(!order){
-        return next( new ErrorHandler("Order not found with this Id", 404));
->>>>>>> 19ab5c5e7635e56816be3a31c37500aa7170adb2
-    };
+        return next(new ErrorHander("Order not found with this Id", 404));
+    }
+
     res.status(200).json({
         success: true,
         order,
     });
 });
 
-
-//Get Logged in user Orders
-<<<<<<< HEAD
-<<<<<<< HEAD
+// get logged in user  Orders
 exports.myOrders = catchAsyncErrors(async (req, res, next) => {
     const orders = await Order.find({ user: req.user._id });
-=======
-exports.myOrders = catchAsyncErrors( async( req, res, next) =>{ 
-    const orders = await Order.find({user: req.user._id});
->>>>>>> 19ab5c5e7635e56816be3a31c37500aa7170adb2
-=======
-exports.myOrders = catchAsyncErrors( async( req, res, next) =>{ 
-    const orders = await Order.find({user: req.user._id});
->>>>>>> 19ab5c5e7635e56816be3a31c37500aa7170adb2
+
     res.status(200).json({
         success: true,
         orders,
     });
 });
 
-//Get All Orders -Admin
-<<<<<<< HEAD
-<<<<<<< HEAD
+// get all Orders -- Admin
 exports.getAllOrders = catchAsyncErrors(async (req, res, next) => {
     const orders = await Order.find();
 
     let totalAmount = 0;
-    orders.forEach((order) => {
-=======
-=======
->>>>>>> 19ab5c5e7635e56816be3a31c37500aa7170adb2
-exports.getAllOrders = catchAsyncErrors( async (req, res, next) =>{
-    const orders = await Order.find();
 
-    let totalAmount = 0;
-    orders.forEach(( order ) => {
-<<<<<<< HEAD
->>>>>>> 19ab5c5e7635e56816be3a31c37500aa7170adb2
-=======
->>>>>>> 19ab5c5e7635e56816be3a31c37500aa7170adb2
+    orders.forEach((order) => {
         totalAmount += order.totalPrice;
     });
+
     res.status(200).json({
         success: true,
         totalAmount,
@@ -145,16 +77,16 @@ exports.getAllOrders = catchAsyncErrors( async (req, res, next) =>{
     });
 });
 
-//Update Order Status --Admin
+// update Order Status -- Admin
 exports.updateOrder = catchAsyncErrors(async (req, res, next) => {
     const order = await Order.findById(req.params.id);
 
     if (!order) {
-        return next(new ErrorHandler("Order not found with this Id", 404));
+        return next(new ErrorHander("Order not found with this Id", 404));
     }
 
     if (order.orderStatus === "Delivered") {
-        return next(new ErrorHandler("You have already delivered this order", 400));
+        return next(new ErrorHander("You have already delivered this order", 400));
     }
 
     if (req.body.status === "Shipped") {
@@ -182,24 +114,17 @@ async function updateStock(id, quantity) {
     await product.save({ validateBeforeSave: false });
 }
 
-//Delete Order --Admin
-
-<<<<<<< HEAD
-<<<<<<< HEAD
+// delete Order -- Admin
 exports.deleteOrder = catchAsyncErrors(async (req, res, next) => {
-=======
-exports.deleteOrder = catchAsyncErrors(async( req, res, next) => {
->>>>>>> 19ab5c5e7635e56816be3a31c37500aa7170adb2
-=======
-exports.deleteOrder = catchAsyncErrors(async( req, res, next) => {
->>>>>>> 19ab5c5e7635e56816be3a31c37500aa7170adb2
     const order = await Order.findById(req.params.id);
+
     if (!order) {
-        return next(new ErrorHandler("Order not found with this Id", 404));
-    };
+        return next(new ErrorHander("Order not found with this Id", 404));
+    }
+
     await order.remove();
+
     res.status(200).json({
         success: true,
-    })
-})
-
+    });
+});

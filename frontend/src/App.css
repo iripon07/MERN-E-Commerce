@@ -1,8 +1,6 @@
 *{
   margin: 0;
   scroll-behavior: smooth;
-<<<<<<< HEAD
-<<<<<<< HEAD
 }
 
 /* Chrome, Safari, Edge, Opera */
@@ -13,17 +11,13 @@ input::-webkit-inner-spin-button {
 }
 
 /* Firefox */
-input[type="number"] {
+/* input[type="number"] {
   -moz-appearance: textfield;
-}
+} */
 
 .greenColor {
   color: green !important;
 }
 .redColor {
   color: red !important;
-=======
->>>>>>> 19ab5c5e7635e56816be3a31c37500aa7170adb2
-=======
->>>>>>> 19ab5c5e7635e56816be3a31c37500aa7170adb2
 }

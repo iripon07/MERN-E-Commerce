@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 import React from "react";
 import { Provider as AlertProvider, positions, transitions } from "react-alert";
 import AlertTemplate from "react-alert-template-basic";
@@ -21,22 +19,4 @@ root.render(
       <App />
     </AlertProvider>
   </Provider>,
-=======
-=======
->>>>>>> 19ab5c5e7635e56816be3a31c37500aa7170adb2
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import { Provider } from 'react-redux';
-import App from './App';
-import store from './store';
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <Provider store={store}>
-    <App />
-  </Provider>
-<<<<<<< HEAD
->>>>>>> 19ab5c5e7635e56816be3a31c37500aa7170adb2
-=======
->>>>>>> 19ab5c5e7635e56816be3a31c37500aa7170adb2
 );
