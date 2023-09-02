@@ -4,7 +4,7 @@ import MailOutlineIcon from "@material-ui/icons/MailOutline";
 import React, { Fragment, useEffect, useRef, useState } from 'react';
 import { useAlert } from 'react-alert';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { clearErrors, login, register } from "../../actions/userAction";
 import Loader from "../layout/Loader/Loader";
 import "./LoginSignUp.css";
@@ -13,6 +13,7 @@ const LoginSignUp = () => {
     const dispatch = useDispatch();
     const alert = useAlert();
     const navigate = useNavigate();
+    const location = useLocation();
     const { error, loading, isAuthenticated } = useSelector((state) => state.user);
     const loginTab = useRef(null);
     const registerTab = useRef(null);
@@ -59,6 +60,7 @@ const LoginSignUp = () => {
             setUser({ ...user, [e.target.name]: e.target.value });
         }
     };
+    const redirect = location.search ? location.search("=")[1] : "/account";
 
     useEffect(() => {
         if (error) {
@@ -66,9 +68,9 @@ const LoginSignUp = () => {
             dispatch(clearErrors());
         }
         if (isAuthenticated) {
-            navigate("/account")
+            navigate(redirect)
         }
-    }, [dispatch, error, alert, navigate, isAuthenticated])
+    }, [dispatch, error, alert, navigate, isAuthenticated, redirect])
 
     const switchTabs = (e, tab) => {
         if (tab === "login") {
