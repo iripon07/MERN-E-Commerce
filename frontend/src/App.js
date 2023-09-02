@@ -15,6 +15,7 @@ import Footer from './component/layout/Footer/Footer';
 import Header from './component/layout/Header/Header';
 import UserOptions from './component/layout/Header/UserOptions';
 import store from "./store";
+import UpdateProfile from './component/User/UpdateProfile';
 
 
 function App() {
@@ -43,6 +44,7 @@ function App() {
         <Route path='/login' element={<LoginSignUp />} />
         <ProtectiveRoute>
           <Route path='/account' element={<Profile />} />
+          <Route path='/me/update' element={<UpdateProfile />} />
         </ProtectiveRoute>
       </Routes>
       <Footer />
