@@ -30,7 +30,7 @@ const LoginSignUp = () => {
 
     const loginSubmit = (e) => {
         e.preventDefault();
-        dispatch(login(email, password));
+        dispatch(login(loginEmail, loginPassword));
     }
     const registerSubmit = (e) => {
         e.preventDefault();
