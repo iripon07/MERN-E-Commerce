@@ -14,7 +14,7 @@ const UpdateProfile = () => {
     const dispatch = useDispatch();
     const alert = useAlert();
     const navigate = useNavigate();
-    const { user } = useSelector((state) => state.user);
+    const { user } = useSelector((state) => state.profile);
     const { error, isUpdated, loading } = useSelector((state) => state.profile);
 
     const [name, setName] = useState("");
