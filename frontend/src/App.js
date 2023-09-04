@@ -16,6 +16,7 @@ import Header from './component/layout/Header/Header';
 import UserOptions from './component/layout/Header/UserOptions';
 import store from "./store";
 import UpdatePassword from './component/User/UpdatePassword';
+import ForgotPassword from './component/User/ForgotPassword';
 
 
 function App() {
@@ -45,6 +46,7 @@ function App() {
         <Route path='/account' element={<Profile />} />
         <Route path='/me/update' element={<UpdateProfile />} />
         <Route path='/password/update' element={<UpdatePassword />} />
+        <Route path='/password/forgot' element={<ForgotPassword />} />
       </Routes>
       <Footer />
     </Router>
