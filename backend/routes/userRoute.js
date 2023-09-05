@@ -37,5 +37,3 @@ router.route("/admin/user/:id")
 
 
 module.exports = router;
-
-
