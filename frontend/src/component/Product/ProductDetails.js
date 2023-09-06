@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import Carousel from 'react-material-ui-carousel';
 import ReactStars from "react-rating-stars-component";
 import { useDispatch, useSelector } from 'react-redux';
@@ -15,6 +15,7 @@ const ProductDetails = () => {
     const { id } = useParams();
     const dispatch = useDispatch();
     const alert = useAlert()
+    const [quantity, setQuantity] = useState(1);
     const { product, loading, error } = useSelector((state) => state.productDetails);
 
     useEffect(() => {
@@ -35,12 +36,27 @@ const ProductDetails = () => {
         isHalf: true
     }
 
+    const increaseQuantity = () => {
+        if(product.Stock <= quantity){
+            return;
+        }
+        const qty = quantity + 1;
+        setQuantity(qty);
+    }
+    const decreaseQuantity = () => {
+        if(1 >= quantity){
+            return;
+        }
+        const qty = quantity -1;
+        setQuantity(qty);
+    }
+
     return (
         <Fragment>
             {
                 loading ? <Loader /> : (
                     <Fragment>
-                        <MetaData title={`${product.name} --ECOMMERCE`} />
+                        <MetaData title={`${product.name} --E-COMMERCE`} />
                         <div className='ProductDetails'>
                             <div>
                                 <Carousel>
@@ -72,9 +88,13 @@ const ProductDetails = () => {
                                     <h1>{`₹${product.price}`}</h1>
                                     <div className="detailsBlock-3-1">
                                         <div className="detailsBlock-3-1-1">
-                                            <button >-</button>
+                                            <button
+                                            onClick={decreaseQuantity}
+                                             >-</button>
                                             <input readOnly type="number" value={product.quantity} />
-                                            <button>+</button>
+                                            <button
+                                                onClick={increaseQuantity}
+                                            >+</button>
                                         </div>
                                         <button
                                         >
