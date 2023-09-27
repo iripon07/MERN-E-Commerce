@@ -9,6 +9,7 @@ import MetaData from '../layout/MetaData.js';
 import "./ProductDetails.css";
 import ReviewCard from './ReviewCard.js';
 import { useAlert } from 'react-alert'
+import { addItemsToCart } from '../../actions/cartAction.js';
 
 
 const ProductDetails = () => {
@@ -17,6 +18,23 @@ const ProductDetails = () => {
     const alert = useAlert()
     const [quantity, setQuantity] = useState(1);
     const { product, loading, error } = useSelector((state) => state.productDetails);
+    const increaseQuantity = () => {
+        if (product.Stock <= quantity) {
+            return;
+        }
+        const qty = quantity + 1;
+        setQuantity(qty);
+    }
+    const decreaseQuantity = () => {
+        if (1 >= quantity) {
+            return;
+        }
+        const qty = quantity - 1;
+        setQuantity(qty);
+    }
+    const addToCartHandler = () => (
+        dispatch(addItemsToCart(id, quantity))
+    )
 
     useEffect(() => {
         if (error) {
@@ -36,20 +54,7 @@ const ProductDetails = () => {
         isHalf: true
     }
 
-    const increaseQuantity = () => {
-        if(product.Stock <= quantity){
-            return;
-        }
-        const qty = quantity + 1;
-        setQuantity(qty);
-    }
-    const decreaseQuantity = () => {
-        if(1 >= quantity){
-            return;
-        }
-        const qty = quantity -1;
-        setQuantity(qty);
-    }
+    
 
     return (
         <Fragment>
@@ -91,12 +96,13 @@ const ProductDetails = () => {
                                             <button
                                             onClick={decreaseQuantity}
                                              >-</button>
-                                            <input readOnly type="number" value={product.quantity} />
+                                            <input readOnly type="number" value={quantity} />
                                             <button
                                                 onClick={increaseQuantity}
                                             >+</button>
                                         </div>
                                         <button
+                                        onClick={addToCartHandler}
                                         >
                                             Add to Cart
                                         </button>
