@@ -25,5 +25,9 @@ app.use("/api/v1", order);
 //Middleware for Errors
 app.use(errorMiddleware);
 
+app.get("/", (req, res) => {
+    res.send("Running on");
+});
+
 
 module.exports = app;
